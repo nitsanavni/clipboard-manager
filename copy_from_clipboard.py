@@ -23,10 +23,7 @@ def fzf_select(items):
         result = subprocess.run([
             'fzf',
             '--read0',
-            '--print0',
-            '--reverse',
-            '-i',
-            '--ansi',
+            '--highlight-line',
             '--preview', 'echo {} | head -n 10',
             '--preview-window', 'right:50%:wrap'
         ], input=input_str, text=True, capture_output=True)
